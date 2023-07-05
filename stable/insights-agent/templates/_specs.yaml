@@ -2,6 +2,7 @@
   name: {{ .Label }}
   labels:
     app: insights-agent
+    app.kubernetes.io/name: {{ .Label }}
   {{- with .Config.labels }}
     {{- toYaml . | nindent 4 }}
   {{- end }}
@@ -49,8 +50,9 @@ activeDeadlineSeconds: {{ mul .Config.timeout .Values.cronjobs.backoffLimit }}
 
 {{ define "job-spec-metadata" }}
 metadata:
-  {{- with .Config.jobLabels }}
   labels:
+    app: insights-agent
+  {{- with .Config.jobLabels }}
     {{- toYaml . | nindent 4 }}
   {{- end }}
   annotations:
@@ -70,6 +72,8 @@ serviceAccountName: {{ include "insights-agent.fullname" . }}-{{ .Label }}
 nodeSelector:
   {{- toYaml . | nindent 2 }}
 {{- end }}
+priorityClassName: insights-agent-low
+automountServiceAccountToken: false
 {{- with .Values.cronjobs.tolerations }}
 tolerations:
   {{- toYaml . | nindent 2 }}
