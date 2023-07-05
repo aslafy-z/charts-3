@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.21.4
+* Fix some polaris findings
+
 ## 2.21.3
 * set default runAsGroup for uploader container
 ## 2.21.2
