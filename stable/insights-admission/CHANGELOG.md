@@ -1,6 +1,8 @@
 # Changelog
 
-## 1.8.1
+## 2.0.0
+(Major version bump due to a fix in labelSelectors)
+
 * Fix some polaris findings
 
 ## 1.8.0
