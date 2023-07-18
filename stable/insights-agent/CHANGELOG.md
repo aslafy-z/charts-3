@@ -1,10 +1,20 @@
 # Changelog
 
-## 2.21.4
+## 2.21.7
 * Fix some polaris findings
+
+## 2.21.6
+* Update Polaris to 8.4
+
+## 2.21.5
+* Update insights-admission to 1.8.2
+
+## 2.21.4
+* Update insights-admission to 1.8.1
 
 ## 2.21.3
 * set default runAsGroup for uploader container
+
 ## 2.21.2
 * Update changelog
 
